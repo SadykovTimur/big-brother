@@ -33,7 +33,7 @@ class MainPage(Page):
                 return False
 
         self.app.set_implicitly_wait(1)
-        wait_for(condition, msg='Page was not loaded')
+        wait_for(condition, timeout=40, msg='Page was not loaded')
         self.app.restore_implicitly_wait()
 
     def wait_for_loading_monitoring(self) -> None:
@@ -60,5 +60,5 @@ class MainPage(Page):
                 return False
 
         self.app.set_implicitly_wait(1)
-        wait_for(condition, msg='Page was not loaded')
+        wait_for(condition, timeout=40, msg='Page was not loaded')
         self.app.restore_implicitly_wait()
